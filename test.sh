@@ -44,7 +44,7 @@ calico/{cni,node,kube-controllers}:v3.32.0
 
 ###### 拉取镜像 ######
 for IMAGE in "${IMAGES[@]}"; do
-    RAW_IMAGE=$(echo $IMAGE | awk -F '/' 'print $NF')
+    RAW_IMAGE=$(echo $IMAGE | awk -F '/' '{print $NF}')
 
     echo -e "正在同步 [$IMAGE]...\n"
     skopeo copy \
