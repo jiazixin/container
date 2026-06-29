@@ -24,3 +24,8 @@ jobs:
         run: |
           cat /etc/os-release
           pwd
+          ls .
+
+      - name: copy nginx
+        run: |
+          bash test.sh
