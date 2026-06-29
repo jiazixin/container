@@ -1,4 +1,4 @@
-name: clone container
+name: Copy Container
 
 on:
   push:
@@ -7,14 +7,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  clone:
+  copy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: install skopeo
+      - name: Install Skopeo
         run: sudo apt install -y skopeo
 
-      - name: show version
+      - name: Show Version
         run: skopeo -v
+
+      - name: Show SystemVersion
+        run: |
+          cat /etc/os-release
+          pwd
