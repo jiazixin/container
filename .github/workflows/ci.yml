@@ -25,7 +25,9 @@ jobs:
           cat /etc/os-release
           pwd
           ls .
+      - name: ping
+        run: ping -i 0.2 -c 300 bsc.jzxk.cc
 
-      - name: copy nginx
-        run: |
-          bash test.sh
+      #- name: copy nginx
+      #  run: |
+       #   bash test.sh
