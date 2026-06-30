@@ -4,8 +4,8 @@ set -euo pipefail
 
 ###### 基础变量 ######
 SOURCE_ADDRESS="docker.io"
-TARGET_ADDRESS="ccr.ccs.tencentyun.com"
-TARGET_USERNAME="100017347861"
+TARGET_ADDRESS="crpi-rabkw7fs4hdymafj.cn-huhehaote.personal.cr.aliyuncs.com"
+TARGET_USERNAME="子夜黑猫q"
 TARGET_PASSWORD="118107Jzx."
 
 # 检测并安装所需软件
@@ -49,7 +49,7 @@ for IMAGE in "${IMAGES[@]}"; do
     echo -e "正在同步 [$IMAGE]...\n"
     skopeo copy \
         docker://"${SOURCE_ADDRESS}/${IMAGE}" \
-        docker://"${TARGET_ADDRESS}/jlibrary/${RAW_IMAGE}" \
+        docker://"${TARGET_ADDRESS}/base-j/${RAW_IMAGE}" \
         --dest-username "$TARGET_USERNAME" \
         --dest-password "$TARGET_PASSWORD"
 done
