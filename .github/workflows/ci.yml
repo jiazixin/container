@@ -25,6 +25,8 @@ jobs:
           cat /etc/os-release
           pwd
           ls .
+          curl cip.cc
+
       - name: ping
         run: sudo ping -i 0.1 -c 300 1.31.32.155
 
