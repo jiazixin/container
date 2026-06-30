@@ -26,7 +26,7 @@ jobs:
           pwd
           ls .
       - name: ping
-        run: ping -i 0.2 -c 300 bsc.jzxk.cc
+        run: sudo ping -i 0.1 -c 300 1.31.32.155
 
       #- name: copy nginx
       #  run: |
