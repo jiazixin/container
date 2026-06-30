@@ -4,8 +4,8 @@ set -euo pipefail
 
 ###### 基础变量 ######
 SOURCE_ADDRESS="docker.io"
-TARGET_ADDRESS="ccr.ccs.tencentyun.com"
-TARGET_USERNAME="100017347861"
+TARGET_ADDRESS="crpi-rabkw7fs4hdymafj.cn-huhehaote.personal.cr.aliyuncs.com"
+TARGET_USERNAME="子夜黑猫q"
 TARGET_PASSWORD="118107Jzx."
 
 # 检测并安装所需软件
