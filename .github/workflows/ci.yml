@@ -15,8 +15,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Skopeo
-        run: sudo apt-get install -y skopeo regctl
+        run: sudo apt-get install -y skopeo
+
+      - name: Install regctl
+        run: |
+          wget -O regctlhttps://github.com/regclient/regclient/releases/download/v0.11.5/regctl-linux-amd64
+          chmod +x regctl
       - name: version
-        run: regctl version
+        run: ./regctl version
       #- name: Copy Image
       #  run: bash test.sh
