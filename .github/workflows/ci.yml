@@ -23,5 +23,8 @@ jobs:
           chmod +x regctl
       - name: version
         run: ./regctl version
+
+      - name: test 
+        run: ./regctl image ratelimit docker.io/library/nginx:latest
       #- name: Copy Image
       #  run: bash test.sh
