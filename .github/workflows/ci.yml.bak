@@ -1,0 +1,30 @@
+name: Copy Container
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Skopeo
+        run: sudo apt-get install -y skopeo
+
+      - name: Install regctl
+        run: |
+          wget -O regctl https://github.com/regclient/regclient/releases/download/v0.11.5/regctl-linux-amd64
+          chmod +x regctl
+      - name: version
+        run: ./regctl version
+
+      - name: test 
+        run: ./regctl image ratelimit docker.io/library/nginx:latest
+      #- name: Copy Image
+      #  run: bash test.sh
